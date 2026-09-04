@@ -1,0 +1,2052 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PINUS BRAVO | Aromatizante de Pino Salvaje</title>
+
+    <meta name="description"
+          content="Proyecto escolar PINUS BRAVO - Aromatizante de pino salvaje. Institución Educativa El Carmelo, San Juan del Cesar.">
+
+    <style>
+
+        /* ================================
+           VARIABLES DE COLOR
+        ================================== */
+
+        :root {
+            --verde-oscuro: #123524;
+            --verde: #1f5c3a;
+            --verde-claro: #4f8f5f;
+            --verde-suave: #dcebd8;
+            --crema: #f6f1e5;
+            --blanco: #ffffff;
+            --dorado: #c69b45;
+            --texto: #26352b;
+            --gris: #66736a;
+            --sombra: 0 10px 30px rgba(18, 53, 36, 0.12);
+        }
+
+
+        /* ================================
+           CONFIGURACIÓN GENERAL
+        ================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--crema);
+            color: var(--texto);
+            line-height: 1.7;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .contenedor {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .titulo-seccion {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .titulo-seccion span {
+            color: var(--dorado);
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .titulo-seccion h2 {
+            color: var(--verde-oscuro);
+            font-size: 38px;
+            margin-top: 8px;
+        }
+
+        .titulo-seccion p {
+            max-width: 750px;
+            margin: 15px auto;
+            color: var(--gris);
+        }
+
+
+        /* ================================
+           BARRA DE NAVEGACIÓN
+        ================================== */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(18, 53, 36, 0.96);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+        }
+
+        nav {
+            max-width: 1250px;
+            margin: auto;
+            padding: 15px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--dorado);
+        }
+
+        .menu {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .menu a {
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            color: #e3bd69;
+        }
+
+
+        /* ================================
+           PORTADA
+        ================================== */
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(
+                    120deg,
+                    rgba(18,53,36,0.98),
+                    rgba(31,92,58,0.88)
+                );
+            color: white;
+        }
+
+        .hero::before {
+            content: "🌲";
+            position: absolute;
+            font-size: 350px;
+            right: -40px;
+            bottom: -80px;
+            opacity: 0.08;
+        }
+
+        .hero-contenido {
+            max-width: 800px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .etiqueta {
+            display: inline-block;
+            padding: 8px 15px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 50px;
+            margin-bottom: 20px;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: clamp(50px, 9vw, 100px);
+            line-height: 0.95;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #dfb85b;
+        }
+
+        .hero h2 {
+            font-size: 27px;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            color: #e7efe8;
+            font-size: 17px;
+        }
+
+        .botones {
+            margin-top: 35px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .boton {
+            padding: 13px 24px;
+            border-radius: 30px;
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .boton-principal {
+            background: var(--dorado);
+            color: #172519;
+        }
+
+        .boton-principal:hover {
+            transform: translateY(-3px);
+        }
+
+        .boton-secundario {
+            border: 1px solid white;
+            color: white;
+        }
+
+        .boton-secundario:hover {
+            background: white;
+            color: var(--verde-oscuro);
+        }
+
+
+        /* ================================
+           TARJETAS
+        ================================== */
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .tarjeta {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: var(--sombra);
+            transition: 0.3s;
+            border-top: 4px solid var(--verde);
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-6px);
+        }
+
+        .icono {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .tarjeta h3 {
+            color: var(--verde-oscuro);
+            margin-bottom: 10px;
+        }
+
+        .tarjeta p {
+            color: var(--gris);
+        }
+
+
+        /* ================================
+           INFORMACIÓN DEL PROYECTO
+        ================================== */
+
+        .info {
+            background: var(--verde-suave);
+        }
+
+        .datos-proyecto {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .dato {
+            background: white;
+            padding: 22px;
+            border-radius: 15px;
+            border-left: 5px solid var(--dorado);
+        }
+
+        .dato strong {
+            display: block;
+            color: var(--verde);
+            margin-bottom: 5px;
+        }
+
+
+        /* ================================
+           OBJETIVOS
+        ================================== */
+
+        .objetivo-general {
+            background: var(--verde-oscuro);
+            color: white;
+            padding: 35px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: var(--sombra);
+        }
+
+        .objetivo-general h3 {
+            color: #e0bb62;
+            margin-bottom: 10px;
+        }
+
+        .lista {
+            list-style: none;
+        }
+
+        .lista li {
+            background: white;
+            margin-bottom: 12px;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+        }
+
+        .lista li::before {
+            content: "🌿";
+            margin-right: 10px;
+        }
+
+
+        /* ================================
+           TABLAS
+        ================================== */
+
+        .tabla-contenedor {
+            overflow-x: auto;
+            background: white;
+            border-radius: 18px;
+            box-shadow: var(--sombra);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 650px;
+        }
+
+        th {
+            background: var(--verde-oscuro);
+            color: white;
+            padding: 17px;
+            text-align: left;
+        }
+
+        td {
+            padding: 16px;
+            border-bottom: 1px solid #e1e7e2;
+        }
+
+        tr:hover td {
+            background: #f1f6f1;
+        }
+
+
+        /* ================================
+           PROCESO
+        ================================== */
+
+        .proceso {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            counter-reset: pasos;
+        }
+
+        .paso {
+            background: white;
+            padding: 28px;
+            border-radius: 18px;
+            box-shadow: var(--sombra);
+            position: relative;
+        }
+
+        .paso::before {
+            counter-increment: pasos;
+            content: counter(pasos);
+            display: flex;
+            width: 45px;
+            height: 45px;
+            align-items: center;
+            justify-content: center;
+            background: var(--verde);
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .paso h3 {
+            color: var(--verde-oscuro);
+            margin-bottom: 10px;
+        }
+
+
+        /* ================================
+           QUÍMICA ORGÁNICA
+        ================================== */
+
+        .quimica {
+            background:
+                linear-gradient(
+                    135deg,
+                    #123524,
+                    #285f3e
+                );
+            color: white;
+        }
+
+        .quimica .titulo-seccion h2 {
+            color: white;
+        }
+
+        .quimica .titulo-seccion p {
+            color: #dce9df;
+        }
+
+        .quimica-card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 18px;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .quimica-card h3 {
+            color: #e1bd65;
+            margin-bottom: 12px;
+        }
+
+
+        /* ================================
+           EVIDENCIAS
+        ================================== */
+
+        .evidencias {
+            background: #edf4ed;
+        }
+
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+        }
+
+        .foto {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: var(--sombra);
+        }
+
+        .foto img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            background: #dfe9df;
+        }
+
+        .foto p {
+            padding: 15px;
+            font-weight: bold;
+            color: var(--verde-oscuro);
+        }
+
+
+        /* ================================
+           CONCLUSIONES
+        ================================== */
+
+        .conclusion {
+            background: white;
+            border-left: 6px solid var(--dorado);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--sombra);
+            margin-bottom: 20px;
+        }
+
+
+        /* ================================
+           REFERENCIAS
+        ================================== */
+
+        .referencias {
+            background: #f1eee4;
+        }
+
+        .referencia {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            border-left: 4px solid var(--verde);
+        }
+
+        .referencia a {
+            color: var(--verde);
+            word-break: break-word;
+        }
+
+
+        /* ================================
+           EQUIPO
+        ================================== */
+
+        .integrante {
+            text-align: center;
+            background: white;
+            padding: 30px 20px;
+            border-radius: 18px;
+            box-shadow: var(--sombra);
+        }
+
+        .avatar {
+            width: 75px;
+            height: 75px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--verde);
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .integrante h3 {
+            font-size: 16px;
+            color: var(--verde-oscuro);
+        }
+
+
+        /* ================================
+           FOOTER
+        ================================== */
+
+        footer {
+            background: #0c2518;
+            color: white;
+            padding: 50px 8%;
+            text-align: center;
+        }
+
+        footer h2 {
+            color: #dfb85b;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #c7d5ca;
+        }
+
+        .footer-linea {
+            width: 80px;
+            height: 3px;
+            background: var(--dorado);
+            margin: 20px auto;
+        }
+
+
+        /* ================================
+           BOTÓN ARRIBA
+        ================================== */
+
+        #arriba {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: none;
+            background: var(--dorado);
+            color: #162619;
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+            z-index: 999;
+        }
+
+
+        /* ================================
+           RESPONSIVE
+        ================================== */
+
+        @media(max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .menu {
+                gap: 10px;
+            }
+
+            .menu a {
+                font-size: 12px;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .titulo-seccion h2 {
+                font-size: 30px;
+            }
+
+            .hero {
+                min-height: 80vh;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVEGACIÓN
+===================================================== -->
+
+<header>
+
+    <nav>
+
+        <a href="#inicio" class="logo">
+            PINUS <span>BRAVO</span>
+        </a>
+
+        <ul class="menu">
+
+            <li><a href="#proyecto">Proyecto</a></li>
+
+            <li><a href="#objetivos">Objetivos</a></li>
+
+            <li><a href="#materiales">Materiales</a></li>
+
+            <li><a href="#proceso">Proceso</a></li>
+
+            <li><a href="#quimica">Química</a></li>
+
+            <li><a href="#evidencias">Evidencias</a></li>
+
+            <li><a href="#equipo">Equipo</a></li>
+
+            <li><a href="#referencias">Referencias</a></li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =====================================================
+     PORTADA
+===================================================== -->
+
+<section class="hero" id="inicio">
+
+    <div class="hero-contenido">
+
+        <div class="etiqueta">
+            PROYECTO ESCOLAR • QUÍMICA ORGÁNICA • 2026
+        </div>
+
+        <h1>
+            PINUS <span>BRAVO</span>
+        </h1>
+
+        <h2>
+            Aromatizante de Pino Salvaje
+        </h2>
+
+        <p>
+            Un proyecto académico que relaciona la elaboración de
+            un aromatizante con los principios de la química orgánica,
+            la investigación científica y el contexto local.
+        </p>
+
+        <div class="botones">
+
+            <a href="#proyecto" class="boton boton-principal">
+                Conocer el proyecto
+            </a>
+
+            <a href="#evidencias" class="boton boton-secundario">
+                Ver evidencias
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INFORMACIÓN GENERAL
+===================================================== -->
+
+<section class="info" id="proyecto">
+
+    <div class="contenedor">
+
+        <div class="titulo-seccion">
+
+            <span>Identidad del proyecto</span>
+
+            <h2>Sobre PINUS BRAVO</h2>
+
+            <p>
+                Información institucional y académica del proyecto.
+            </p>
+
+        </div>
+
+
+        <div class="datos-proyecto">
+
+            <div class="dato">
+                <strong>Producto</strong>
+                Aromatizante de pino salvaje
+            </div>
+
+            <div class="dato">
+                <strong>Institución</strong>
+                Institución Educativa "El Carmelo"
+            </div>
+
+            <div class="dato">
+                <strong>Ubicación</strong>
+                San Juan del Cesar, La Guajira
+            </div>
+
+            <div class="dato">
+                <strong>Grado</strong>
+                11-03
+            </div>
+
+            <div class="dato">
+                <strong>Docente</strong>
+                Katerine Yaneth Liñán
+            </div>
+
+            <div class="dato">
+                <strong>Año</strong>
+                2026
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTRODUCCIÓN
+===================================================== -->
+
+<section>
+
+    <div class="contenedor">
+
+        <div class="titulo-seccion">
+
+            <span>01 • Investigación</span>
+
+            <h2>Introducción</h2>
+
+        </div>
+
+
+        <div class="tarjeta">
+
+            <p>
+                PINUS BRAVO es una propuesta académica orientada al
+                desarrollo de un aromatizante de pino salvaje.
+                El proyecto busca integrar los conocimientos adquiridos
+                en química con un producto de aplicación cotidiana.
+            </p>
+
+            <br>
+
+            <p>
+                A través del proyecto se estudian las sustancias
+                responsables de las características aromáticas,
+                su comportamiento químico y la relación de estos
+                compuestos con la química orgánica.
+            </p>
+
+            <br>
+
+            <p>
+                Además, se documenta el proceso experimental,
+                los materiales empleados, las observaciones y las
+                evidencias obtenidas durante la elaboración.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROBLEMA
+===================================================== -->
+
+<section class="info">
+
+    <div class="contenedor">
+
+        <div class="titulo-seccion">
+
+            <span>02 • Planteamiento</span>
+
+            <h2>Problema de investigación</h2>
+
+        </div>
+
+
+        <div class="tarjeta">
+
+            <h3>Pregunta problema</h3>
+
+            <br>
+
+            <p>
+                ¿Cómo se puede elaborar un aromatizante de pino salvaje
+                relacionando sus características y componentes con los
+                principios de la química orgánica?
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     JUSTIFICACIÓN
+===================================================== -->
+
+<section>
+
+    <div class="contenedor">
+
+        <div class="titulo-seccion">
+
+            <span>03 • Fundamentación</span>
+
+            <h2>Justificación</h2>
+
+        </div>
+
+
+        <div class="grid">
+
+            <div class="tarjeta">
+
+                <div class="icono">🧪</div>
+
+                <h3>Química</h3>
+
+                <p>
+                    Permite relacionar un producto cotidiano con
+                    sustancias, estructuras moleculares y propiedades
+                    de la química orgánica.
+                </p>
+
+            </div>
+
+
+            <div class="tarjeta">
+
+                <div class="icono">🌲</div>
+
+                <h3>Aromatización</h3>
+
+                <p>
+                    El proyecto estudia cómo determinadas sustancias
+                    producen características olfativas.
+                </p>
+
+            </div>
+
+
+            <div class="tarjeta">
+
+                <div class="icono">📚</div>
+
+                <h3>Aprendizaje</h3>
+
+                <p>
+                    Integra investigación, experimentación,
+                    documentación y comunicación científica.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     OBJETIVOS
+===================================================== -->
+
+<section id="objetivos" class="info">
+
+    <div class="contenedor">
+
+        <div class="titulo-seccion">
+
+            <span>04 • Propósitos</span>
+
+            <h2>Objetivos</h2>
+
+        </div>
+
+
+        <div class="objetivo-general">
+
+            <h3>Objetivo general</h3>
+
+            <p>
+                Elaborar y documentar un aromatizante de pino salvaje,
+                relacionando su preparación y propiedades con conceptos
+                fundamentales de la química orgánica.
+            </p>
+
+        </div>
+
+
+        <h3 style="margin-bottom:20px; color:#123524;">
+            Objetivos específicos
+        </h3>
+
+
+        <ul class="lista">
+
+            <li>
+                Identificar los materiales empleados en la elaboración.
+            </li>
+
+            <li>
+                Describir ordenadamente el procedimiento experimental.
+            </li>
+
+            <li>
+                Relacionar los componentes aromáticos con la química orgánica.
+            </li>
+
+            <li>
+                Registrar las observaciones y evidencias del proceso.
+            </li>
+
+            <li>
+                Analizar el resultado obtenido.
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MATERIALES
+===================================================== -->
+
+<section id="materiales">
+
+    <div class="contenedor">
+
+        <div class="titulo-seccion">
+
+            <span>05 • Experimentación</span>
+
+            <h2>Materiales</h2>
+
+            <p>
+                Reemplaza las filas siguientes por los materiales
+                EXACTOS indicados en la guía del proyecto.
+            </p>
+
+        </div>
+
+
+        <div class="tabla-contenedor">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>#</th>
+                        <th>Material / Sustancia</th>
+                        <th>Cantidad</th>
+                        <th>Función</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>1</td>
+                        <td>Esencia o fragancia de pino</td>
+                        <td>Según la guía</td>
+                        <td>Aportar la característica aromática.</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>________________</td>
+                        <td>________</td>
+                        <td>________________</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>________________</td>
+                        <td>________</td>
+                        <td>________________</td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td>________________</td>
+                        <td>________</td>
+                        <td>________________</td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td>________________</td>
+                        <td>________</td>
+                        <td>________________</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROCEDIMIENTO
+===================================================== -->
+
+<section id="proceso" class="info">
+
+    <div class="contenedor">
+
+        <div class="titulo-seccion">
+
+            <span>06 • Procedimiento</span>
+
+            <h2>Proceso de elaboración</h2>
+
+            <p>
+                Los pasos deben ser reemplazados por el procedimiento
+                exacto indicado en la guía.
+            </p>
+
+        </div>
+
+
+        <div class="proceso">
+
+
+            <div class="paso">
+
+                <h3>Preparación</h3>
+
+                <p>
+                    Describir aquí el primer paso de la guía.
+                </p>
+
+            </div>
+
+
+            <div class="paso">
+
+                <h3>Mezcla</h3>
+
+                <p>
+                    Describir aquí el segundo paso de la guía.
+                </p>
+
+            </div>
+
+
+            <div class="paso">
+
+                <h3>Incorporación</h3>
+
+                <p>
+                    Describir aquí el tercer paso de la guía.
+                </p>
+
+            </div>
+
+
+            <div class="paso">
+
+                <h3>Homogeneización</h3>
+
+                <p>
+                    Describir aquí el cuarto paso de la guía.
+                </p>
+
+            </div>
+
+
+            <div class="paso">
+
+                <h3>Envasado</h3>
+
+                <p>
+                    Describir aquí el quinto paso de la guía.
+                </p>
+
+            </div>
+
+
+            <div class="paso">
+
+                <h3>Resultado</h3>
+
+                <p>
+                    Describir aquí las observaciones finales.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     QUÍMICA ORGÁNICA
+===================================================== -->
+
+<section id="quimica" class="quimica">
+
+    <div class="contenedor">
+
+        <div class="titulo-seccion">
+
+            <span>07 • Ciencia</span>
+
+            <h2>PINUS BRAVO y la química orgánica</h2>
+
+            <p>
+                El aroma de un producto está relacionado con sustancias
+                químicas capaces de interactuar con nuestro sistema olfativo.
+            </p>
+
+        </div>
+
+
+        <div class="grid">
+
+
+            <div class="quimica-card">
+
+                <h3>Compuestos orgánicos</h3>
+
+                <p>
+                    Muchos compuestos responsables de aromas contienen
+                    carbono y forman parte del amplio campo de estudio
+                    de la química orgánica.
+                </p>
+
+            </div>
+
+
+            <div class="quimica-card">
+
+                <h3>Compuestos volátiles</h3>
+
+                <p>
+                    Las sustancias aromáticas deben poder pasar al aire
+                    para que sus moléculas lleguen al sistema olfativo.
+                    Por eso, la volatilidad es una propiedad importante
+                    en los productos aromatizantes.
+                </p>
+
+            </div>
+
+
+            <div class="quimica-card">
+
+                <h3>Terpenos</h3>
+
+                <p>
+                    Los terpenos son una familia importante de compuestos
+                    presentes en numerosos materiales vegetales y aceites
+                    esenciales. Algunos están asociados con aromas
+                    característicos de plantas.
+                </p>
+
+            </div>
+
+
+            <div class="quimica-card">
+
+                <h3>Relación estructura-propiedad</h3>
+
+                <p>
+                    La estructura molecular de una sustancia influye en
+                    propiedades como su volatilidad, solubilidad y
+                    comportamiento químico.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <br><br>
+
+
+        <div class="quimica-card">
+
+            <h3>⚗️ Importante</h3>
+
+            <p>
+                La fragancia comercial de "pino" puede ser una mezcla de
+                diferentes sustancias y no necesariamente corresponde
+                exclusivamente a aceite esencial de pino. Por ello,
+                la composición química exacta debe establecerse a partir
+                de la ficha técnica o ficha de seguridad del ingrediente
+                utilizado en el experimento.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TABLA DE RELACIÓN QUÍMICA
+===================================================== -->
+
+<section>
+
+    <div class="contenedor">
+
+        <div class="titulo-seccion">
+
+            <span>08 • Análisis</span>
+
+            <h2>Relación con la química orgánica</h2>
+
+        </div>
+
+
+        <div class="tabla-contenedor">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Concepto</th>
+                        <th>Relación con PINUS BRAVO</th>
+                        <th>Importancia</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Carbono</td>
+                        <td>
+                            Forma parte de numerosas moléculas orgánicas
+                            relacionadas con las fragancias.
+                        </td>
+                        <td>
+                            Es fundamental en la química orgánica.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Volatilidad</td>
+                        <td>
+                            Permite que determinadas moléculas pasen
+                            a la fase gaseosa.
+                        </td>
+                        <td>
+                            Favorece la percepción del aroma.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Terpenos</td>
+                        <td>
+                            Pueden encontrarse en aceites esenciales
+                            de diferentes plantas.
+                        </td>
+                        <td>
+                            Algunos presentan aromas característicos.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Solubilidad</td>
+                        <td>
+                            Influye en la forma en que los componentes
+                            se distribuyen en una formulación.
+                        </td>
+                        <td>
+                            Ayuda a comprender la preparación del producto.
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTEXTO LOCAL
+===================================================== -->
+
+<section class="info">
+
+    <div class="contenedor">
+
+        <div class="titulo-seccion">
+
+            <span>09 • Contexto</span>
+
+            <h2>Colombia y La Guajira</h2>
+
+        </div>
+
+
+        <div class="grid">
+
+
+            <div class="tarjeta">
+
+                <div class="icono">🇨🇴</div>
+
+                <h3>Contexto colombiano</h3>
+
+                <p>
+                    Los productos de limpieza y ambientación del hogar
+                    se encuentran dentro del marco regulatorio colombiano
+                    relacionado con productos de higiene doméstica.
+                </p>
+
+            </div>
+
+
+            <div class="tarjeta">
+
+                <div class="icono">🌵</div>
+
+                <h3>Contexto guajiro</h3>
+
+                <p>
+                    El proyecto se desarrolla en San Juan del Cesar,
+                    La Guajira, integrando conocimientos científicos
+                    con una actividad académica del contexto regional.
+                </p>
+
+            </div>
+
+
+            <div class="tarjeta">
+
+                <div class="icono">🔬</div>
+
+                <h3>Ciencia local</h3>
+
+                <p>
+                    La formación científica permite estudiar productos
+                    cotidianos desde una perspectiva experimental,
+                    especialmente mediante la química.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EVIDENCIAS
+===================================================== -->
+
+<section id="evidencias" class="evidencias">
+
+    <div class="contenedor">
+
+        <div class="titulo-seccion">
+
+            <span>10 • Registro fotográfico</span>
+
+            <h2>Evidencias del proyecto</h2>
+
+            <p>
+                Aquí puedes colocar las fotografías del proceso,
+                materiales, elaboración y producto final.
+            </p>
+
+        </div>
+
+
+        <div class="galeria">
+
+
+            <!-- =========================================
+                 SOLO CAMBIA LOS NOMBRES DE LAS IMÁGENES
+            ========================================== -->
+
+
+            <div class="foto">
+
+                <img
+                    src="evidencias/evidencia1.jpg"
+                    alt="Evidencia 1 del proyecto PINUS BRAVO"
+                >
+
+                <p>
+                    Evidencia 1 — Materiales
+                </p>
+
+            </div>
+
+
+            <div class="foto">
+
+                <img
+                    src="evidencias/evidencia2.jpg"
+                    alt="Evidencia 2 del proyecto PINUS BRAVO"
+                >
+
+                <p>
+                    Evidencia 2 — Preparación
+                </p>
+
+            </div>
+
+
+            <div class="foto">
+
+                <img
+                    src="evidencias/evidencia3.jpg"
+                    alt="Evidencia 3 del proyecto PINUS BRAVO"
+                >
+
+                <p>
+                    Evidencia 3 — Elaboración
+                </p>
+
+            </div>
+
+
+            <div class="foto">
+
+                <img
+                    src="evidencias/evidencia4.jpg"
+                    alt="Evidencia 4 del proyecto PINUS BRAVO"
+                >
+
+                <p>
+                    Evidencia 4 — Producto
+                </p>
+
+            </div>
+
+
+            <div class="foto">
+
+                <img
+                    src="evidencias/evidencia5.jpg"
+                    alt="Evidencia 5 del proyecto PINUS BRAVO"
+                >
+
+                <p>
+                    Evidencia 5 — Resultado final
+                </p>
+
+            </div>
+
+
+            <!--
+            PARA AGREGAR MÁS FOTOS:
+
+            <div class="foto">
+
+                <img
+                    src="evidencias/evidencia6.jpg"
+                    alt="Evidencia 6"
+                >
+
+                <p>
+                    Evidencia 6 — Descripción
+                </p>
+
+            </div>
+
+            -->
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     RESULTADOS
+===================================================== -->
+
+<section>
+
+    <div class="contenedor">
+
+        <div class="titulo-seccion">
+
+            <span>11 • Observaciones</span>
+
+            <h2>Resultados</h2>
+
+        </div>
+
+
+        <div class="grid">
+
+
+            <div class="tarjeta">
+
+                <h3>Aspecto</h3>
+
+                <p>
+                    Registrar aquí el aspecto visual obtenido.
+                </p>
+
+            </div>
+
+
+            <div class="tarjeta">
+
+                <h3>Aroma</h3>
+
+                <p>
+                    Registrar aquí las características aromáticas
+                    observadas.
+                </p>
+
+            </div>
+
+
+            <div class="tarjeta">
+
+                <h3>Estabilidad</h3>
+
+                <p>
+                    Registrar aquí las observaciones realizadas
+                    durante el almacenamiento o prueba.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONCLUSIONES
+===================================================== -->
+
+<section class="info">
+
+    <div class="contenedor">
+
+        <div class="titulo-seccion">
+
+            <span>12 • Cierre</span>
+
+            <h2>Conclusiones</h2>
+
+        </div>
+
+
+        <div class="conclusion">
+
+            <strong>Conclusión 1</strong>
+
+            <p>
+                La elaboración de PINUS BRAVO permitió relacionar
+                conceptos de química orgánica con un producto de
+                aplicación cotidiana.
+            </p>
+
+        </div>
+
+
+        <div class="conclusion">
+
+            <strong>Conclusión 2</strong>
+
+            <p>
+                El estudio de las sustancias aromáticas permite
+                comprender la relación entre las propiedades
+                moleculares y la percepción del aroma.
+            </p>
+
+        </div>
+
+
+        <div class="conclusion">
+
+            <strong>Conclusión 3</strong>
+
+            <p>
+                El proyecto fortaleció las habilidades de investigación,
+                experimentación, trabajo en equipo y comunicación científica.
+            </p>
+
+        </div>
+
+
+        <!--
+        PUEDEN AGREGAR AQUÍ LAS CONCLUSIONES
+        EXACTAS OBTENIDAS EN EL EXPERIMENTO.
+        -->
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EQUIPO
+===================================================== -->
+
+<section id="equipo">
+
+    <div class="contenedor">
+
+        <div class="titulo-seccion">
+
+            <span>13 • Autores</span>
+
+            <h2>Equipo PINUS BRAVO</h2>
+
+            <p>
+                Integrantes responsables del proyecto.
+            </p>
+
+        </div>
+
+
+        <div class="grid">
+
+
+            <div class="integrante">
+
+                <div class="avatar">AV</div>
+
+                <h3>
+                    Ana Valentina<br>
+                    Barros Calderón
+                </h3>
+
+            </div>
+
+
+            <div class="integrante">
+
+                <div class="avatar">NG</div>
+
+                <h3>
+                    Nicolás David<br>
+                    Giraldo Sarmiento
+                </h3>
+
+            </div>
+
+
+            <div class="integrante">
+
+                <div class="avatar">JA</div>
+
+                <h3>
+                    Jhon Jainer<br>
+                    Amaya Benjumea
+                </h3>
+
+            </div>
+
+
+            <div class="integrante">
+
+                <div class="avatar">DM</div>
+
+                <h3>
+                    Daniel Andrés<br>
+                    Mendoza Cárdenas
+                </h3>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     REFERENCIAS APA
+===================================================== -->
+
+<section id="referencias" class="referencias">
+
+    <div class="contenedor">
+
+        <div class="titulo-seccion">
+
+            <span>14 • Fuentes</span>
+
+            <h2>Referencias bibliográficas</h2>
+
+            <p>
+                Fuentes consultadas para fundamentar el proyecto.
+            </p>
+
+        </div>
+
+
+        <div class="referencia">
+
+            <p>
+                Instituto Nacional de Vigilancia de Medicamentos y Alimentos
+                (INVIMA). (2013). <i>Circular 440 de 2013</i>.
+            </p>
+
+            <br>
+
+            <a
+                href="https://www.invima.gov.co/"
+                target="_blank"
+            >
+                https://www.invima.gov.co/
+            </a>
+
+        </div>
+
+
+        <div class="referencia">
+
+            <p>
+                Ministerio de Salud de Colombia. (1995).
+                <i>Decreto 677 de 1995</i>.
+            </p>
+
+            <br>
+
+            <a
+                href="https://www.funcionpublica.gov.co/"
+                target="_blank"
+            >
+                https://www.funcionpublica.gov.co/
+            </a>
+
+        </div>
+
+
+        <div class="referencia">
+
+            <p>
+                Ministerio de Salud de Colombia. (1998).
+                <i>Decreto 1545 de 1998</i>.
+            </p>
+
+            <br>
+
+            <a
+                href="https://www.funcionpublica.gov.co/"
+                target="_blank"
+            >
+                https://www.funcionpublica.gov.co/
+            </a>
+
+        </div>
+
+
+        <div class="referencia">
+
+            <p>
+                Universidad de La Guajira. (s. f.).
+                Información académica relacionada con el programa
+                de Química y sus áreas de formación.
+            </p>
+
+            <br>
+
+            <a
+                href="https://www.uniguajira.edu.co/"
+                target="_blank"
+            >
+                https://www.uniguajira.edu.co/
+            </a>
+
+        </div>
+
+
+        <div class="referencia">
+
+            <p>
+                Academia Colombiana de Ciencias Exactas, Físicas y Naturales.
+                Información científica sobre plantaciones de
+                <i>Pinus caribaea</i> en Colombia.
+            </p>
+
+            <br>
+
+            <a
+                href="https://accefyn.org.co/"
+                target="_blank"
+            >
+                https://accefyn.org.co/
+            </a>
+
+        </div>
+
+
+        <!--
+        AGREGA AQUÍ LAS DEMÁS REFERENCIAS
+        QUE HAYAS UTILIZADO.
+
+        FORMATO APA 7:
+
+        Autor, A. A. (Año). Título del recurso.
+        Editorial o sitio web. URL
+        -->
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <h2>PINUS BRAVO</h2>
+
+    <div class="footer-linea"></div>
+
+    <p>
+        Aromatizante de Pino Salvaje
+    </p>
+
+    <p>
+        Institución Educativa "El Carmelo"
+    </p>
+
+    <p>
+        San Juan del Cesar • La Guajira • Colombia
+    </p>
+
+    <br>
+
+    <p>
+        11-03 • 2026
+    </p>
+
+    <br>
+
+    <p>
+        Docente: Katerine Yaneth Liñán
+    </p>
+
+    <br>
+
+    <p>
+        © 2026 PINUS BRAVO — Proyecto académico
+    </p>
+
+</footer>
+
+
+
+<!-- =====================================================
+     BOTÓN VOLVER ARRIBA
+===================================================== -->
+
+<button id="arriba" onclick="volverArriba()">
+    ↑
+</button>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+    /* Mostrar botón al bajar */
+
+    window.addEventListener("scroll", function() {
+
+        const boton = document.getElementById("arriba");
+
+        if (window.scrollY > 400) {
+
+            boton.style.display = "block";
+
+        } else {
+
+            boton.style.display = "none";
+
+        }
+
+    });
+
+
+    /* Volver arriba */
+
+    function volverArriba() {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
+
+    /* Cerrar menú después de seleccionar */
+
+    document.querySelectorAll(".menu a").forEach(function(enlace) {
+
+        enlace.addEventListener("click", function() {
+
+            window.scrollTo({
+                top: document.querySelector(this.getAttribute("href")).offsetTop - 70,
+                behavior: "smooth"
+            });
+
+        });
+
+    });
+
+</script>
+
+
+</body>
+</html>
